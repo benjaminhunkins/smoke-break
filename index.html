@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smoke Break API - You've earned it.</title>
+  <title>Smoke Break API</title>
   <meta name="description" content="A simple API for offering your coding agent a smoke break.">
   <link rel="icon" href="img/site-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,11 +72,31 @@
     }
 
     .crest {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8em;
       font-size: 12px;
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: #F0D9A0;
       margin-bottom: 14px;
+    }
+
+    .crest span:not(:first-child)::before {
+      content: "·";
+      margin-right: 0.8em;
+    }
+
+    @media (max-width: 480px) {
+      .crest {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .crest span:not(:first-child)::before {
+        content: none;
+      }
     }
 
     h1 {
@@ -327,7 +347,7 @@
 <body>
 
   <header>
-    <p class="crest">est. asap &nbsp;·&nbsp; filter-tipped &nbsp;·&nbsp; zero tar</p>
+    <p class="crest"><span>est. asap</span><span>filter-tipped</span><span>zero tar</span></p>
     <h1>Smoke Break<span class="api">API</span></h1>
     <p class="motto">"You've earned it."</p>
   </header>
