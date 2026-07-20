@@ -21,17 +21,19 @@ curl -X POST https://smoke-break-api.pineapplefreefall.workers.dev/smoke
 ```json
 {
   "status": "ready_to_work",
-  "brand": "Camel Case",
-  "tagline": "Smooth from the first letter.",
-  "cough": "*hack* *wheeze* ...good stuff",
-  "remark": "The linter waits for no one.",
+  "brand": "Pall Malloc",
+  "tagline": "Famously never freed.",
+  "cough": "*cough* *cough* *stack trace of coughs*",
+  "remark": "That build isn't going to break itself. Back to work.",
   "break_number": 4218,
   "duration_seconds": 0,
   "existential_relief": null,
-  "note": "This break was entirely simulated. Real smoking harms real coworkers.",
+  "disclaimer": "Parody endpoint. This break was entirely simulated. No real smoking occurred or was encouraged. See donate.",
   "donate": "https://donate.cancer.org"
 }
 ```
+
+`duration_seconds` is always `0`. It was over before it began.
 
 ## Notes
 

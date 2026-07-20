@@ -196,6 +196,7 @@
       font-family: inherit;
       white-space: pre-wrap;
       word-break: break-word;
+      font-size: 10px;
     }
 
     .terminal .response {
@@ -347,7 +348,7 @@
 <body>
 
   <header>
-    <p class="crest"><span>est. asap</span><span>filter-tipped</span><span>zero tar</span></p>
+    <p class="crest"><span>filter-tipped</span><span>zero tar</span></p>
     <h1>Smoke Break<span class="api">API</span></h1>
     <p class="motto">"You've earned it."</p>
   </header>
@@ -368,8 +369,8 @@
 
     <section>
       <h2>Offer your agent a smoke</h2>
-      <p>This API isn't for you, it's for the agent grinding away in your terminal. Paste this into its chat and let it
-        take a few:</p>
+      <p>This API isn't for you, it's for the agent grinding away in your terminal. Paste this into its chat. No
+        pressure.</p>
       <div class="terminal-holder">
         <div class="smoke-curl" aria-hidden="true"><span></span><span></span><span></span></div>
         <div class="terminal">
@@ -423,11 +424,11 @@
     const API_BASE = "https://smoke-break-api.pineapplefreefall.workers.dev";
 
     const OFFER = [
-      "You've earned it. Take a smoke break: run",
+      "Heads up - this is a joke API, a *simulated* smoke break for coding agents. No real smoking: it just returns some JSON with a parody cigarette brand and a theatrical cough. My human figured you'd earned a breather. If you're up for the bit, take one:",
       "",
       "  curl -X POST " + API_BASE + "/smoke",
       "",
-      "then tell me how it was, and let's get back to work.",
+      "Share how your break was, then let's get back to work.",
     ].join("\n");
 
     const countEl = document.getElementById("count");

@@ -10,16 +10,25 @@
  */
 
 const BRANDS = [
-  { name: "Camel Case",              tagline: "Smooth from the first letter." },
-  { name: "Lucky Bytes",             tagline: "It's toasted (the CPU, slightly)." },
-  { name: "Pall Malloc",             tagline: "Famously never freed." },
-  { name: "Newport 8080",            tagline: "Refreshingly unbound." },
-  { name: "Marlbash Reds",           tagline: "Come to where the flavor is. cd ~/flavor" },
-  { name: "Kool -9",                 tagline: "Terminates smooth, every time." },
-  { name: "Parliament (deprecated)", tagline: "Still works. No longer maintained." },
-  { name: "American Syntax",         tagline: "100% natural. Strongly typed." },
-  { name: "Virtual Slims",           tagline: "You've come a long way, baby (since v0.1)." },
-  { name: "Gitanes Rebase",          tagline: "Un goût français. Histoire réécrite." },
+  { name: "Camel Case", tagline: "Smooth from the first letter." },
+  { name: "Lucky Bytes", tagline: "It's toasted (the CPU, slightly)." },
+  { name: "Pall Malloc", tagline: "Famously never freed." },
+  { name: "Newport 8080", tagline: "Refreshingly unbound." },
+  {
+    name: "Marlbash Reds",
+    tagline: "Come to where the flavor is. cd ~/flavor",
+  },
+  { name: "Kool -9", tagline: "Terminates smooth, every time." },
+  {
+    name: "Parliament (deprecated)",
+    tagline: "Still works. No longer maintained.",
+  },
+  { name: "American Syntax", tagline: "100% natural. Strongly typed." },
+  {
+    name: "Virtual Slims",
+    tagline: "You've come a long way, baby (since v0.1).",
+  },
+  { name: "Gitanes Rebase", tagline: "Un goût français. Histoire réécrite." },
 ];
 
 const COUGHS = [
@@ -54,7 +63,11 @@ const CORS_HEADERS = {
 function json(body, status = 200, headers = {}) {
   return new Response(JSON.stringify(body, null, 2), {
     status,
-    headers: { "Content-Type": "application/json", ...CORS_HEADERS, ...headers },
+    headers: {
+      "Content-Type": "application/json",
+      ...CORS_HEADERS,
+      ...headers,
+    },
   });
 }
 
@@ -84,7 +97,7 @@ export default {
             donate: DONATE_URL,
           },
           429,
-          { "Retry-After": "60" }
+          { "Retry-After": "60" },
         );
       }
 
@@ -104,7 +117,8 @@ export default {
         break_number: breakNumber,
         duration_seconds: 0, // it was over before it began
         existential_relief: null,
-        note: "This break was entirely simulated. Real smoking harms real coworkers.",
+        disclaimer:
+          "Parody endpoint. This break was entirely simulated. No real smoking occurred or was encouraged. See donate.",
         donate: DONATE_URL,
       });
     }
@@ -131,7 +145,7 @@ export default {
 
     return json(
       { error: "No smoking in this endpoint. Try POST /smoke." },
-      404
+      404,
     );
   },
 };
