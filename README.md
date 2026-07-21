@@ -35,12 +35,6 @@ curl -X POST https://smoke-break-api.pineapplefreefall.workers.dev/smoke
 
 `duration_seconds` is always `0`. It was over before it began.
 
-## Notes
-
-- **Free-tier headroom:** 100k requests/day on the Workers free plan.
-- **Rate limiting:** `POST /smoke` is capped at 10 requests/minute per IP via Cloudflare's built-in rate limiting binding (the `SMOKE_LIMITER` binding in `wrangler.toml`). Over the limit returns a 429 with `Retry-After: 60`. It's per-colo and best-effort — enough to keep the counter honest without any extra infrastructure. `GET /count` is unlimited; reading is not smoking.
-- The brands are parodies. Parliament remains deprecated.
-
 ## Credits
 
 - Built with [Claude](https://claude.com).
